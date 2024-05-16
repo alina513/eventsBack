@@ -6,7 +6,7 @@ dotenv.config();
 
 
 const eventsRouter = require("./routes/eventsRouter.js");
-
+const participantsRouter = require("./routes/participantsRouter.js");
 const app = express();
 
 
@@ -15,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/events", eventsRouter);
+app.use("/api/members", participantsRouter);
                   
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });
