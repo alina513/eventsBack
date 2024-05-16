@@ -4,9 +4,8 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const authRouter = require("./routes/auth.js");
-const drugsRouter = require("./routes/drugsRouter.js");
-const shopRouter = require("./routes/shopRouter.js")
+
+const eventsRouter = require("./routes/eventsRouter.js");
 
 const app = express();
 
@@ -15,10 +14,8 @@ app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/users", authRouter);
-app.use("/api/drugs", drugsRouter);
-app.use("/api/shopingcard", shopRouter);
-
+app.use("/api/events", eventsRouter);
+                  
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });
 });
