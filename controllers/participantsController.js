@@ -9,7 +9,7 @@ const ctrlWrapper = require("../helpers/ctrlWrapper.js");
 // };
 
 const getAllParticipants = async (req, res) => {
-  const {id} = req.params;
+  const {id} = req.body;
   const result = await Participant.find({
 event_id: id
   });
