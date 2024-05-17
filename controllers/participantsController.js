@@ -3,7 +3,7 @@ const HttpError = require("../helpers/HttpError.js");
 const ctrlWrapper = require("../helpers/ctrlWrapper.js");
 
 const getAllParticipants = async (req, res) => {
-  const {event_id: event} = req.body;
+  // const {event_id: event} = req.body;
   const result = await Participant.find({event});
   res.json(result);
 };
