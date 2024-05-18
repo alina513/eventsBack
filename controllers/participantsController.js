@@ -15,7 +15,6 @@ const createParticipant = async (req, res) => {
   res.status(201).json(result);
 };
 
-
 module.exports = {
   getAllParticipants: ctrlWrapper(getAllParticipants),
   createParticipant: ctrlWrapper(createParticipant)
