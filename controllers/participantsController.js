@@ -7,15 +7,6 @@ const getAllParticipants = async (req, res) => {
   res.json(result);
 };
 
-// const getAllParticipants = async (req, res) => {
-//   const {id} = req.body;
-//   const result = await Participant.find({
-// event_id: id
-//   });
-//   res.json(result);
-// };
-
-
 const createParticipant = async (req, res) => {
   const result = await Participant.create({...req.body});
   if (!result) {
